@@ -1,0 +1,14 @@
+{% extends 'main/header_section.html' %}
+{% block body %}
+
+<section id="blog">
+
+  <div class="container">
+    <div class="disease_dic_detail">
+      <h1>{{ data.0.title }}</h1>
+      <p> {{data_content | safe}}</p>
+    <!-- {{ dieseaseDic.1.content | safe}} 나중에 이렇게 하면됌. 일단 여기서는 title만 필요. -->
+    </div>
+  </div>
+</section>
+{% endblock body %}

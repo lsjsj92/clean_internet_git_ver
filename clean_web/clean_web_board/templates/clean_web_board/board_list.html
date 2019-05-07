@@ -1,0 +1,26 @@
+{% extends 'clean_web_main/common/header.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class="container">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>no</th>
+        <th>content</th>
+        <th>category(1:욕설, 0:일반 글)</th>
+      </tr>
+    {% for board in board_data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ board.0 }}</td>
+            <td>{{ board.1 }}</td>
+        </tr>
+    {% endfor %}
+    </thead>
+    <tbody>
+
+    </tbody>
+    </table>
+</div>
+
+{% endblock main %}

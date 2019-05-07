@@ -1,0 +1,15 @@
+{
+	"board": {
+		"url" : "http://210.89.178.38:8080/data/board",
+		"template_name" : "clean_web_board/board_list.html"
+	},
+	"linegraph": {
+		"url" : "http://210.89.178.38:8080/data/graph/line",
+		"template_name" : "clean_web_linegraph/line_graph_sub.html"
+	},
+	"piechart": {
+		"url" : "http://210.89.178.38:8080/data/graph/pie",
+		"template_name" : "clean_web_piechart/piechart_main.html"
+	}
+
+}

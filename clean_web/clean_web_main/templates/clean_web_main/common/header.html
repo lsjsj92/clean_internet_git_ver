@@ -1,0 +1,76 @@
+<html lang="ko">
+
+    {% load staticfiles %}
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Fontawesom-->
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+        <!--Animated CSS-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
+
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <!--Bootstrap Carousel-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/carousel.css' %}" />
+
+        <link rel="stylesheet" href="{% static 'css/isotope/style.css' %}">
+
+        <!--Main Stylesheet-->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <!--Responsive Framework-->
+        <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+		<style type="text/css">
+            #container {
+                min-width: 310px;
+                max-width: 800px;
+                height: 400px;
+                margin: 0 auto
+            }
+		</style>
+
+
+    </head>
+    <script src="{% static 'js/jquery-1.12.3.min.js' %}"></script>
+    <script src="{% static 'js/highcharts.js' %}"></script>
+    <script src="{% static 'js/series-label.js' %} "></script>
+    <script src="{% static 'js/exporting.js' %}"></script>
+    <script src="{% static 'js/export-data.js' %}"></script>
+    <script src="{% static 'js/highcharts-3d.js' %} "></script>
+    <body>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#"></a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'clean_web_main:clean_web_main' %}">Home</a></li>
+              <li><a href="{% url 'clean_web_board:clean_web_board' %}">게시판</a></li>
+              <li><a href="{% url 'clean_web_pie_chart:clean_web_piechart' %}">파이차트</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">라인그래프 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'clean_web_line_graph:clean_web_line_graph' %}">한눈에 보기</a></li>
+                  <li><a href="{% url 'clean_web_line_graph:clean_web_line_graph_day' %}">일</a></li>
+                  <li><a href="{% url 'clean_web_line_graph:clean_web_line_graph_week' %}">주</a></li>
+                  <li><a href="{% url 'clean_web_line_graph:clean_web_line_graph_month' %}">월</a></li>
+                  <li><a href="{% url 'clean_web_line_graph:clean_web_line_graph_year' %}">년</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </nav>
+        {% block main %}
+
+        {% endblock main %}
+    </body>
+</html>

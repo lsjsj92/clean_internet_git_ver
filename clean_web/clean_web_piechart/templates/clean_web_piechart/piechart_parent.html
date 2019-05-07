@@ -1,0 +1,59 @@
+{% extends 'clean_web_main/common/header.html' %}
+{% load staticfiles %}
+{% block main %}
+<script>
+	function make_piechart(num, title, datas){
+	console.log(datas)
+		Highcharts.chart('container'+String(num), {
+			chart: {
+				type: 'pie',
+				options3d: {
+					enabled: true,
+					alpha: 45,
+					beta: 0
+				}
+			},
+			title: {
+				text: title
+			},
+			tooltip: {
+				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+			credits: {enabled: false},  //highchart.com 안나오게.
+			exporting: { enabled: false }, //다운로드 나오는 버튼 탭 안나오게.
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					depth: 35,
+					dataLabels: {
+						enabled: true,
+						format: '{point.name}'
+					}
+				}
+			},
+			series: [{
+				type: 'pie',
+				name: 'Browser share',
+				data: datas
+			}]
+		});
+
+	}
+</script>
+
+<section id="portfolio" class="text-center">
+            <div class="col-md-12">
+            <div class="container">
+                <center><h1>욕설 데이터 통계</h1></center>
+                <p></p>
+            </div>
+            </div>
+            <!--End of col-md-2-->
+
+            {% block line_graph_body %}
+
+            {% endblock %}
+
+</section>
+{% endblock main %}

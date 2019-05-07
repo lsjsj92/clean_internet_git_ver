@@ -1,0 +1,23 @@
+{% extends 'clean_web_linegraph/line_graph_parent.html' %}
+{% block line_graph_body %}
+{% load staticfiles %}
+
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blog_news">
+                    <div class="single_blog_item">
+                        <div id="container1">
+                        </div>
+                        <script>
+                            make_line_graph_date('1', '', {{date | safe}}, {{count | safe}});
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock line_graph_body %}

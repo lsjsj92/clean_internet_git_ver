@@ -1,0 +1,76 @@
+{% extends 'clean_web_main/common/header.html' %}
+{% load staticfiles %}
+{% block main %}
+<script>
+
+
+	function make_line_graph_date(num, title, dates, counts){
+		Highcharts.chart('container'+String(num), {
+
+			title: {
+				text: title
+			},
+
+			subtitle: {
+				text: ''
+			},
+
+			yAxis: {
+				title: {
+					text: 'Number of board list'
+				}
+			},
+			xAxis: {
+                categories: dates,
+                labels: {
+                    rotation: 90
+                }
+            },
+			credits: {enabled: false},  //highchart.com 안나오게.
+			exporting: { enabled: false }, //다운로드 나오는 버튼 탭 안나오게.
+			legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'middle'
+			},
+
+			series: [{
+				name: 'board counts',
+				data: counts
+			}],
+
+			responsive: {
+				rules: [{
+					condition: {
+						maxWidth: 500
+					},
+					chartOptions: {
+						legend: {
+							layout: 'horizontal',
+							align: 'center',
+							verticalAlign: 'bottom'
+						}
+					}
+				}]
+			}
+
+		});
+	}
+
+</script>
+
+<section id="portfolio" class="text-center">
+            <div class="col-md-12">
+            <div class="container">
+                <center><h1>데이터 수집 상황</h1></center>
+                <p></p>
+            </div>
+            </div>
+            <!--End of col-md-2-->
+
+            {% block line_graph_body %}
+
+            {% endblock %}
+
+</section>
+{% endblock main %}

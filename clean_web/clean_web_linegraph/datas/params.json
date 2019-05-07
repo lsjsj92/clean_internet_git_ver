@@ -1,0 +1,23 @@
+{
+	"day" : {
+        "date" : [],
+        "count" : []
+
+    },
+    "week": {
+        "date" : [],
+        "count" : []
+
+    },
+    "month": {
+        "date" : [],
+        "count" : []
+
+    },
+    "year": {
+        "date" : [],
+        "count" : []
+
+    }
+
+}
