@@ -6,7 +6,7 @@ class MysqlConn:
             host='localhost',
             user='root',
             password='1234',
-            db = 'clean_web_culture',
+            db = '',
             charset = 'utf8'
         )
 
